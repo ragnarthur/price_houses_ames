@@ -4,119 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previsão de Preços de Imóveis</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Previsão de Preços de Imóveis em Iowa</h1>
-        <form id="prediction-form">
-            <div class="row">
-                <div class="col-md-6">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="overall-qual">Qualidade Geral (1-10):</label>
-                                        <input type="number" class="form-control" id="overall-qual" name="overall_qual" min="1" max="10" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="full-bath">Banheiros Completos:</label>
-                                        <input type="number" class="form-control" id="full-bath" name="full_bath" min="0" max="3" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="year-built">Ano de Construção:</label>
-                                        <input type="number" class="form-control" id="year-built" name="year_built" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="gr-liv-area">Área Total de Acabamento (m²):</label>
-                                        <input type="number" class="form-control" id="gr-liv-area" name="gr_liv_area" value="150" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="total-bsmt-sf">Área Total do Porão (m²):</label>
-                                        <input type="number" class="form-control" id="total-bsmt-sf" name="total_bsmt_sf" value="74" required>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="first-flr-sf">Área do Primeiro Andar (m²):</label>
-                                        <input type="number" class="form-control" id="first-flr-sf" name="first_flr_sf" value="84" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="bsmt-fin-sf1">Área do Porão Finalizado (m²):</label>
-                                        <input type="number" class="form-control" id="bsmt-fin-sf1" name="bsmt_fin_sf1" value="28" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="lot-area">Área do Lote (m²):</label>
-                                        <input type="number" class="form-control" id="lot-area" name="lot_area" value="650" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="second-flr-sf">Área do Segundo Andar (m²):</label>
-                                        <input type="number" class="form-control" id="second-flr-sf" name="second_flr_sf" value="56" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="garage-cars">Vagas na Garagem:</label>
-                                        <input type="number" class="form-control" id="garage-cars" name="garage_cars" value="2" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-group">
-                                        <label for="garage-area">Área da Garagem (m²):</label>
-                                        <input type="number" class="form-control" id="garage-area" name="garage_area" value="37" required>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title text-center">Previsão de Preços de Imóveis em Iowa</h1>
+                <p class="text-justify">
+                    Bem-vindo ao nosso aplicativo de previsão de preços de imóveis em Ames, Iowa. Ames é uma cidade charmosa, conhecida por suas belas paisagens e a presença da Universidade Estadual de Iowa. Este aplicativo foi criado para ajudar você a estimar os preços de imóveis na região, com base em diversas características das propriedades.
+                </p>
+                <form id="prediction-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="overall-qual">Qualidade Geral (1-10):</label>
+                                <input type="number" class="form-control" id="overall-qual" name="overall_qual" min="1" max="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="full-bath">Banheiros Completos:</label>
+                                <input type="number" class="form-control" id="full-bath" name="full_bath" min="0" max="3" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="year-built">Ano de Construção:</label>
+                                <input type="number" class="form-control" id="year-built" name="year_built" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gr-liv-area">Área Total de Acabamento (m²):</label>
+                                <input type="number" class="form-control" id="gr-liv-area" name="gr_liv_area" value="150" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="total-bsmt-sf">Área Total do Porão (m²):</label>
+                                <input type="number" class="form-control" id="total-bsmt-sf" name="total_bsmt_sf" value="74" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="first-flr-sf">Área do Primeiro Andar (m²):</label>
+                                <input type="number" class="form-control" id="first-flr-sf" name="first_flr_sf" value="84" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bsmt-fin-sf1">Área do Porão Finalizado (m²):</label>
+                                <input type="number" class="form-control" id="bsmt-fin-sf1" name="bsmt_fin_sf1" value="28" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lot-area">Área do Lote (m²):</label>
+                                <input type="number" class="form-control" id="lot-area" name="lot_area" value="650" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="second-flr-sf">Área do Segundo Andar (m²):</label>
+                                <input type="number" class="form-control" id="second-flr-sf" name="second_flr_sf" value="56" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="garage-cars">Vagas na Garagem:</label>
+                                <input type="number" class="form-control" id="garage-cars" name="garage_cars" value="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="garage-area">Área da Garagem (m²):</label>
+                                <input type="number" class="form-control" id="garage-area" name="garage_area" value="37" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Prever Preço</button>
+                    <button type="button" id="new-search" class="btn btn-secondary btn-block mt-2" style="display: none;">Fazer Nova Pesquisa</button>
+                </form>
+                <div id="result" class="mt-4"></div>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Prever Preço</button>
-        </form>
-        <div id="result"></div>
+        </div>
     </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

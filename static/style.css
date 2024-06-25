@@ -1,39 +1,96 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: url('https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    color: #333;
 }
+
 .container {
-    background: #fff;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85); /* Aumentei a transparência */
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 805px; /* Aumentei o tamanho em 15% */
     width: 100%;
 }
-h1 {
-    text-align: center;
+
+.card {
+    border: none;
+}
+
+.card-title {
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: #0056b3;
 }
-.form-group {
-    margin-bottom: 15px;
+
+.text-justify {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify;
 }
-select.form-control {
-    height: auto;
-    max-height: 200px; /* Maximum height for the dropdown */
-    overflow-y: auto; /* Enable vertical scroll */
-}
-.table td {
-    vertical-align: middle;
-}
-#result {
-    margin-top: 20px;
-    text-align: center;
+
+.form-group label {
     font-weight: bold;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+#result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 57.5%; /* Ajuste para 50% do tamanho do formulário + 15% */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+    animation: popUp 0.5s ease-in-out;
+    display: none; /* Hide the result box initially */
+    z-index: 10;
+    text-align: center;
+    font-size: 1.2rem; /* Aumentar o tamanho do texto */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    transition: background 0.3s ease;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #6c757d, #5a6268);
+    border: none;
+    transition: background 0.3s ease;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #5a6268, #4e555b);
 }

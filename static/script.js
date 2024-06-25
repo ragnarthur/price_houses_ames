@@ -34,16 +34,27 @@ document.getElementById('prediction-form').addEventListener('submit', function(e
         const conversionRate = 5.30; // Exemplo de taxa de conversão
         const priceInReais = (parseFloat(data.prediction) * conversionRate).toFixed(2);
 
-        const formattedPriceInDollars = priceInDollars.replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",");
+        const formattedPriceInDollars = priceInDollars.replace(/\B(?=(\d{3})+(?!\d))/g, ".").replace(".", ",");
         const formattedPriceInReais = priceInReais.replace(/\B(?=(\d{3})+(?!\d))/g, ".").replace(",", ".");
 
-        document.getElementById('result').innerHTML = `
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = `
             <p>Preço Previsto: $${formattedPriceInDollars} dólares</p>
             <p>Preço Previsto: R$${formattedPriceInReais} reais</p>
         `;
+        resultElement.style.display = 'block'; // Show the result box
     })
     .catch(error => {
-        document.getElementById('result').innerText = 'Erro ao prever o preço. Tente novamente.';
+        const resultElement = document.getElementById('result');
+        resultElement.innerText = 'Erro ao prever o preço. Tente novamente.';
+        resultElement.style.display = 'block'; // Show the error message
         console.error('Erro:', error);
     });
+});
+
+document.getElementById('new-search').addEventListener('click', function() {
+    document.getElementById('prediction-form').reset();
+    document.getElementById('result').innerHTML = '';
+    document.getElementById('result').style.display = 'none'; // Hide the result box
+    this.style.display = 'none';
 });
