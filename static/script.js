@@ -43,18 +43,22 @@ document.getElementById('prediction-form').addEventListener('submit', function(e
             <p>Preço Previsto: R$${formattedPriceInReais} reais</p>
         `;
         resultElement.style.display = 'block'; // Show the result box
+        resultElement.classList.add('fade-in'); // Add animation class
     })
     .catch(error => {
         const resultElement = document.getElementById('result');
         resultElement.innerText = 'Erro ao prever o preço. Tente novamente.';
         resultElement.style.display = 'block'; // Show the error message
+        resultElement.classList.add('fade-in'); // Add animation class
         console.error('Erro:', error);
     });
 });
 
 document.getElementById('new-search').addEventListener('click', function() {
     document.getElementById('prediction-form').reset();
-    document.getElementById('result').innerHTML = '';
-    document.getElementById('result').style.display = 'none'; // Hide the result box
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = '';
+    resultElement.style.display = 'none'; // Hide the result box
+    resultElement.classList.remove('fade-in'); // Remove animation class
     this.style.display = 'none';
 });

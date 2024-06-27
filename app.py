@@ -17,6 +17,11 @@ def home():
 def index():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(force=True)

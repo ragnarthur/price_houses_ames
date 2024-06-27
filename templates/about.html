@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Price Imóveis</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Price Imóveis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Pesquisar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title text-center">Sobre a Price Imóveis</h1>
+                <p class="text-justify">
+                    A Price Imóveis é uma empresa inovadora dedicada a fornecer previsões precisas de preços de imóveis em Ames, Iowa. Nossa missão é ajudar compradores e vendedores a tomar decisões informadas no mercado imobiliário.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-lg card-about">
+            <div class="card-body">
+                <h2 class="text-center">Nossa Visão</h2>
+                <p class="text-justify">
+                    Ser a empresa líder em previsão de preços de imóveis, utilizando tecnologias avançadas e análise de dados para fornecer insights valiosos ao mercado imobiliário.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-lg card-about">
+            <div class="card-body">
+                <h2 class="text-center">Nossa Missão</h2>
+                <p class="text-justify">
+                    Capacitar nossos clientes com informações precisas e atualizadas sobre preços de imóveis, ajudando-os a tomar decisões informadas e alcançar seus objetivos imobiliários.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-lg card-about">
+            <div class="card-body">
+                <h2 class="text-center">Nossos Valores</h2>
+                <ul>
+                    <li><i class="fas fa-lightbulb icon"></i><strong>Inovação:</strong> Utilizamos as mais recentes tecnologias para fornecer previsões precisas.</li>
+                    <li><i class="fas fa-balance-scale icon"></i><strong>Precisão:</strong> Comprometemo-nos com a exatidão dos dados e análises que fornecemos.</li>
+                    <li><i class="fas fa-user-check icon"></i><strong>Transparência:</strong> Garantimos que nossos processos e metodologias sejam claros para nossos clientes.</li>
+                    <li><i class="fas fa-users icon"></i><strong>Orientação ao Cliente:</strong> Nosso foco principal é a satisfação e sucesso dos nossos clientes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card shadow-lg card-about">
+            <div class="card-body">
+                <h2 class="text-center">Nossa Equipe</h2>
+                <div class="row team-section">
+                    <div class="col-md-4 team-member">
+                        <img src="{{ url_for('static', filename='images/team/joao_silva.jpg') }}" alt="João Silva">
+                        <h4>João Silva</h4>
+                        <p>CEO & Fundador</p>
+                    </div>
+                    <div class="col-md-4 team-member">
+                        <img src="{{ url_for('static', filename='images/team/maria_souza.jpg') }}" alt="Maria Souza">
+                        <h4>Maria Souza</h4>
+                        <p>CTO & Co-Fundadora</p>
+                    </div>
+                    <div class="col-md-4 team-member">
+                        <img src="{{ url_for('static', filename='images/team/carlos_pereira.jpg') }}" alt="Carlos Pereira">
+                        <h4>Carlos Pereira</h4>
+                        <p>Chefe de Análise de Dados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Price Imóveis. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

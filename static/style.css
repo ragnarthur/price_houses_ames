@@ -25,6 +25,7 @@ body {
 .card {
     border: none;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .card::before {
@@ -118,13 +119,12 @@ footer p {
     font-size: 1rem;
 }
 
-/* Definindo altura mínima para o conteúdo das abas */
 .tab-content {
     min-height: 220px;
 }
 
 img.logo {
-    max-height: 150px;
+    max-height: 200px;
     width: auto;
     margin-top: 20px;
     display: block;
@@ -132,27 +132,34 @@ img.logo {
     margin-right: auto;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(173, 216, 230, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.2);
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #004085;
+}
 
-    .card-title {
-        font-size: 2rem;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-
-    .text-justify {
-        font-size: 1rem;
-    }
-
-    .tab-content ul li {
-        font-size: 1rem;
+    to {
+        opacity: 1;
     }
 }
 
-/* Estilos para a navbar */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
 .navbar {
-    background-color: #0056b3;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-brand, .navbar-nav .nav-link {
@@ -162,4 +169,64 @@ img.logo {
 .navbar-nav .nav-link:hover {
     background-color: #004085;
     color: #fff !important;
+}
+
+.card-about {
+    margin-bottom: 20px;
+}
+
+.card-about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #004085;
+}
+
+.card-about p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+.card-about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-about ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.card-about .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #0056b3;
+}
+
+.team-section {
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #004085;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #555;
 }
