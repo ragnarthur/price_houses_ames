@@ -34,8 +34,8 @@ document.getElementById('prediction-form').addEventListener('submit', function(e
         const conversionRate = 5.30; // Exemplo de taxa de conversão
         const priceInReais = (parseFloat(data.prediction) * conversionRate).toFixed(2);
 
-        const formattedPriceInDollars = priceInDollars.replace(/\B(?=(\d{3})+(?!\d))/g, ".").replace(".", ",");
-        const formattedPriceInReais = priceInReais.replace(/\B(?=(\d{3})+(?!\d))/g, ".").replace(",", ".");
+        const formattedPriceInDollars = priceInDollars.replace(/\B(?=(\d{3})+(?!\d))/g, ".").replace(".", ".");
+        const formattedPriceInReais = priceInReais.replace(/\B(?=(\d{3})+(?!\d))/g, ".").replace(".", ".");
 
         const resultElement = document.getElementById('result');
         resultElement.innerHTML = `

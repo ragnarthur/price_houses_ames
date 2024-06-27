@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background: url('https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070_1280.jpg') no-repeat center center fixed;
+    background: url('https://cdn.pixabay.com/photo/2017/07/09/03/19/home-2486092_1280.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -148,4 +148,18 @@ img.logo {
     .tab-content ul li {
         font-size: 1rem;
     }
+}
+
+/* Estilos para a navbar */
+.navbar {
+    background-color: #0056b3;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #004085;
+    color: #fff !important;
 }
