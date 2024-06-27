@@ -20,6 +20,7 @@ body {
     max-width: 900px;
     width: 100%;
     margin: 20px auto;
+    margin-top: 100px; /* Adicionei margem superior para ajustar ao navbar fixo */
 }
 
 .card {
@@ -160,6 +161,11 @@ img.logo {
 
 .navbar {
     background-color: rgba(0, 0, 0, 0.8);
+    position: fixed; /* Fixar o navbar no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-brand, .navbar-nav .nav-link {
@@ -229,4 +235,23 @@ img.logo {
 .team-member p {
     font-size: 1rem;
     color: #555;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 120px; /* Ajustar a margem superior para dispositivos móveis */
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .text-justify {
+        font-size: 1rem;
+    }
+
+    .tab-content ul li {
+        font-size: 1rem;
+    }
 }
