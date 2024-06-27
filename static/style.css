@@ -5,78 +5,86 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
     color: #333;
 }
 
 .container {
+    flex: 1;
     position: relative;
-    background: rgba(255, 255, 255, 0.85); /* Aumentei a transparência */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 805px; /* Aumentei o tamanho em 15% */
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
     width: 100%;
+    margin: 20px auto;
 }
 
 .card {
     border: none;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/logo_price.webp') no-repeat center center;
+    background-size: contain;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.card-body {
+    position: relative;
+    z-index: 1;
 }
 
 .card-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     color: #0056b3;
+    text-transform: uppercase;
 }
 
 .text-justify {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #555;
     text-align: justify;
 }
 
-.form-group label {
-    font-weight: bold;
-    color: #555;
+.nav-tabs .nav-link.active {
+    background-color: #0056b3;
+    color: white;
+}
+
+.nav-tabs .nav-link {
+    color: #0056b3;
+}
+
+.tab-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-content ul li {
+    margin-bottom: 10px;
     font-size: 1.1rem;
-}
-
-#result {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 57.5%; /* Ajuste para 50% do tamanho do formulário + 15% */
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-    animation: popUp 0.5s ease-in-out;
-    display: none; /* Hide the result box initially */
-    z-index: 10;
-    text-align: center;
-    font-size: 1.2rem; /* Aumentar o tamanho do texto */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes popUp {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
 }
 
 .btn-primary {
     background: linear-gradient(45deg, #007bff, #0056b3);
     border: none;
     transition: background 0.3s ease;
-    font-size: 1.1rem;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 5px;
 }
 
 .btn-primary:hover {
@@ -87,10 +95,57 @@ body {
     background: linear-gradient(45deg, #6c757d, #5a6268);
     border: none;
     transition: background 0.3s ease;
-    font-size: 1.1rem;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 5px;
 }
 
 .btn-secondary:hover {
     background: linear-gradient(45deg, #5a6268, #4e555b);
+}
+
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Definindo altura mínima para o conteúdo das abas */
+.tab-content {
+    min-height: 220px;
+}
+
+img.logo {
+    max-height: 150px;
+    width: auto;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .text-justify {
+        font-size: 1rem;
+    }
+
+    .tab-content ul li {
+        font-size: 1rem;
+    }
 }

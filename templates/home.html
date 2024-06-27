@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Previsão de Preços de Imóveis</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 class="card-title text-center">Previsão de Preços de Imóveis em Iowa</h1>
+                        <p class="text-justify">
+                            Bem-vindo ao nosso aplicativo de previsão de preços de imóveis em Ames, Iowa. Ames é uma cidade charmosa, conhecida por suas belas paisagens e a presença da Universidade Estadual de Iowa. Este aplicativo foi criado para ajudar você a estimar os preços de imóveis na região, com base em diversas características das propriedades.
+                        </p>
+                        <h2 class="text-center">Informações sobre os campos de pesquisa</h2>
+                        <p class="text-justify">
+                            Abaixo estão os detalhes dos campos do formulário de pesquisa e como cada um deles pode influenciar o preço dos imóveis:
+                        </p>
+                        <ul class="nav nav-tabs" id="infoTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Campos 1-3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Campos 4-6</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Campos 7-9</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Campos 10-11</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="infoTabContent">
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                                <ul>
+                                    <li><strong>Qualidade Geral (1-10):</strong> Avalie a qualidade geral da construção e dos acabamentos da casa em uma escala de 1 a 10. Casas de maior qualidade geralmente têm preços mais altos devido aos melhores materiais e acabamentos.</li>
+                                    <li><strong>Banheiros Completos:</strong> Número de banheiros completos na casa. Mais banheiros completos tendem a aumentar o valor da propriedade, pois são considerados um indicador de conforto e conveniência.</li>
+                                    <li><strong>Ano de Construção:</strong> Ano em que a casa foi construída. Casas mais novas geralmente têm preços mais altos, pois possuem infraestrutura e design mais modernos.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                                <ul>
+                                    <li><strong>Área Total de Acabamento (m²):</strong> Área total acabada da casa, em metros quadrados. Uma maior área acabada geralmente resulta em um preço mais alto, pois indica mais espaço utilizável.</li>
+                                    <li><strong>Área Total do Porão (m²):</strong> Área total do porão, em metros quadrados. Um porão maior pode aumentar o valor da casa, especialmente se for finalizado e utilizável como espaço adicional.</li>
+                                    <li><strong>Área do Primeiro Andar (m²):</strong> Área do primeiro andar da casa, em metros quadrados. Similar à área total, uma maior área no primeiro andar geralmente contribui para um preço mais alto.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                                <ul>
+                                    <li><strong>Área do Porão Finalizado (m²):</strong> Área finalizada do porão, em metros quadrados. Um porão finalizado pode aumentar significativamente o valor da casa, pois adiciona espaço utilizável.</li>
+                                    <li><strong>Área do Lote (m²):</strong> Área total do lote, em metros quadrados. Lotes maiores podem aumentar o valor da propriedade, proporcionando mais espaço externo.</li>
+                                    <li><strong>Área do Segundo Andar (m²):</strong> Área do segundo andar da casa, em metros quadrados. Similar às outras áreas, uma maior área no segundo andar contribui para um preço mais alto.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                                <ul>
+                                    <li><strong>Vagas na Garagem:</strong> Número de vagas disponíveis na garagem. Mais vagas na garagem são valorizadas pelos compradores, aumentando o valor da casa.</li>
+                                    <li><strong>Área da Garagem (m²):</strong> Área total da garagem, em metros quadrados. Uma garagem maior oferece mais espaço para veículos e armazenamento, contribuindo para um valor mais alto da propriedade.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-center mt-4">
+                            Para iniciar sua pesquisa, clique na aba "Pesquisar" no menu de navegação.
+                        </p>
+                        <div class="text-center mt-4">
+                            <a href="{{ url_for('index') }}" class="btn btn-primary">Pesquisar</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="{{ url_for('static', filename='images/logo_price.webp') }}" alt="Logo" class="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Previsão de Preços de Imóveis. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
