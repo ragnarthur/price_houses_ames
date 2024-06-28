@@ -18,6 +18,10 @@ The project uses a dataset from the city of Ames, Iowa, which contains various h
 
 The city of Ames is located in the state of Iowa, USA, and is known for being home to Iowa State University. The dataset used in this project was originally compiled by Professor Dean De Cock for use in data science competitions.
 
+Check out the demonstration of the application in the video below:
+
+[![Application Demo](https://img.youtube.com/vi/PS6V3yR2ySo/0.jpg)](https://www.youtube.com/watch?v=PS6V3yR2ySo)
+
 ## Dataset Acquisition
 
 The dataset was obtained from Kaggle. You can access and download the dataset from the following link:
@@ -81,30 +85,9 @@ The project contains the following scripts:
 - `feature_importance.py`: Calculates feature importance.
 - `app.py`: Main script that runs the Flask application.
 
-### Project Structure
+## About
 
-house-price-prediction/
-│
-├── data/
-│ ├── raw/ # Raw data
-│ ├── processed/ # Processed data
-│ └── options.json # Dropdown options
-│
-├── scripts/
-│ ├── data_preprocessing.py
-│ ├── model_training.py
-│ ├── feature_importance.py
-│
-├── static/
-│ ├── style.css
-│ └── script.js
-│
-├── templates/
-│ └── index.html
-│
-├── app.py
-├── requirements.txt
-└── README.md
+Price Imóveis is an innovative company dedicated to providing accurate real estate price predictions in Ames, Iowa. Our mission is to help buyers and sellers make informed decisions in the real estate market.
 
 
 ## Contribution
@@ -137,11 +120,21 @@ O projeto utiliza um conjunto de dados da cidade de Ames, Iowa, que contém vár
 
 A cidade de Ames está localizada no estado de Iowa, EUA, e é conhecida por ser a sede da Universidade Estadual de Iowa. O dataset utilizado neste projeto foi originalmente compilado pelo professor Dean De Cock para uso em competições de ciência de dados.
 
+## Demonstração
+
+Confira a demonstração do aplicativo no vídeo abaixo:
+
+[![Demonstração do Aplicativo](https://img.youtube.com/vi/PS6V3yR2ySo/0.jpg)](https://www.youtube.com/watch?v=PS6V3yR2ySo)
+
 ## Aquisição do Dataset
 
 O dataset foi obtido a partir do Kaggle. Você pode acessar e baixar o dataset através do seguinte link:
 
 [Ames Housing Dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data)
+
+## Sobre
+
+A Price Imóveis é uma empresa inovadora dedicada a fornecer previsões precisas de preços de imóveis em Ames, Iowa. Nossa missão é ajudar compradores e vendedores a tomar decisões informadas no mercado imobiliário.
 
 ## Instalação
 
