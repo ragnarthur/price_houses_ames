@@ -20,7 +20,7 @@ body {
     max-width: 900px;
     width: 100%;
     margin: 20px auto;
-    margin-top: 100px; /* Adicionei margem superior para ajustar ao navbar fixo */
+    margin-top: 120px; /* Ajuste para o navbar fixo */
 }
 
 .card {
@@ -47,11 +47,20 @@ body {
     z-index: 1;
 }
 
+/* Atualização para estilização dos endereços */
 .card-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #0056b3;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    text-transform: none; /* Remover maiúsculas */
+    font-weight: 700; /* Negrito */
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
 }
 
 .text-justify {
@@ -166,15 +175,40 @@ img.logo {
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand, .navbar-nav .nav-link {
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff !important;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.1rem;
 }
 
 .navbar-nav .nav-link:hover {
     background-color: #004085;
     color: #fff !important;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
 }
 
 .card-about {
@@ -237,10 +271,23 @@ img.logo {
     color: #555;
 }
 
+.highlight {
+    background-color: #e9ecef;
+    border: 2px solid #007bff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.highlight label {
+    font-size: 1.3rem;
+    color: #0056b3;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;
-        margin-top: 120px; /* Ajustar a margem superior para dispositivos móveis */
+        margin-top: 150px; /* Ajuste para dispositivos móveis */
     }
 
     .card-title {
@@ -253,5 +300,12 @@ img.logo {
 
     .tab-content ul li {
         font-size: 1rem;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
     }
 }
