@@ -193,32 +193,6 @@ O projeto contém os seguintes scripts:
 - `feature_importance.py`: Calcula a importância das características.
 - `app.py`: Script principal que executa o aplicativo Flask.
 
-### Estrutura do Projeto
-
-previsao-precos-imoveis/
-│
-├── data/
-│ ├── raw/ # Dados brutos
-│ ├── processed/ # Dados processados
-│ └── options.json # Opções para os dropdowns
-│
-├── scripts/
-│ ├── data_preprocessing.py
-│ ├── model_training.py
-│ ├── feature_importance.py
-│
-├── static/
-│ ├── style.css
-│ └── script.js
-│
-├── templates/
-│ └── index.html
-│
-├── app.py
-├── requirements.txt
-└── README.md
-
-
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
