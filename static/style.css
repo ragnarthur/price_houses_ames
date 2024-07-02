@@ -309,3 +309,9 @@ img.logo {
         z-index: 1000;
     }
 }
+
+#loading-spinner {
+    display: none;
+    text-align: center;
+    margin-top: 20px; /* Adiciona um espaçamento de 20 pixels acima do spinner */
+}

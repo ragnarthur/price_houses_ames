@@ -5,6 +5,10 @@ function convertToSquareFeet(squareMeters) {
 
 document.getElementById('prediction-form').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    // Mostrar o spinner
+    document.getElementById('loading-spinner').style.display = 'block';
+
     const features = {
         overall_qual: parseFloat(document.getElementById('overall-qual').value),
         gr_liv_area: convertToSquareFeet(parseFloat(document.getElementById('gr-liv-area').value)),
@@ -31,32 +35,44 @@ document.getElementById('prediction-form').addEventListener('submit', function(e
     })
     .then(response => response.json())
     .then(data => {
-        const priceInDollars = parseFloat(data.prediction).toFixed(2);
-        const conversionRate = 5.30; // Exemplo de taxa de conversão
-        const priceInReais = (parseFloat(data.prediction) * conversionRate).toFixed(2);
+        // Simular um delay de 2 segundos
+        setTimeout(() => {
+            const priceInDollars = parseFloat(data.prediction).toFixed(2);
+            const conversionRate = 5.30; // Exemplo de taxa de conversão
+            const priceInReais = (parseFloat(data.prediction) * conversionRate).toFixed(2);
 
-        const formattedPriceInDollars = priceInDollars.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        const formattedPriceInReais = priceInReais.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            const formattedPriceInDollars = priceInDollars.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            const formattedPriceInReais = priceInReais.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-        const resultElement = document.getElementById('result');
-        resultElement.innerHTML = `
-            <p>Preço Previsto: $${formattedPriceInDollars} dólares</p>
-            <p>Preço Previsto: R$${formattedPriceInReais} reais</p>
-        `;
-        resultElement.style.display = 'block'; // Show the result box
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `
+                <p>Preço Previsto: $${formattedPriceInDollars} dólares</p>
+                <p>Preço Previsto: R$${formattedPriceInReais} reais</p>
+            `;
+            resultElement.style.display = 'block'; // Mostrar o resultado
+
+            // Esconder o spinner
+            document.getElementById('loading-spinner').style.display = 'none';
+        }, 2000); // Delay de 2 segundos
     })
     .catch(error => {
-        const resultElement = document.getElementById('result');
-        resultElement.innerText = 'Erro ao prever o preço. Tente novamente.';
-        resultElement.style.display = 'block'; // Show the error message
-        console.error('Erro:', error);
+        // Simular um delay de 2 segundos
+        setTimeout(() => {
+            const resultElement = document.getElementById('result');
+            resultElement.innerText = 'Erro ao prever o preço. Tente novamente.';
+            resultElement.style.display = 'block'; // Mostrar a mensagem de erro
+
+            // Esconder o spinner
+            document.getElementById('loading-spinner').style.display = 'none';
+            console.error('Erro:', error);
+        }, 2000); // Delay de 2 segundos
     });
 });
 
 document.getElementById('new-search').addEventListener('click', function() {
     document.getElementById('prediction-form').reset();
     document.getElementById('result').innerHTML = '';
-    document.getElementById('result').style.display = 'none'; // Hide the result box
+    document.getElementById('result').style.display = 'none'; // Esconder a caixa de resultado
     this.style.display = 'none';
 });
 
