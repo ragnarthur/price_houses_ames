@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Casas de Ames</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            text-transform: none; /* Remover maiúsculas */
+            font-weight: 700; /* Negrito */
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo2.jpg') }}" width="65" height="60" class="d-inline-block align-top mr-2" alt="Logo">
+            Price Imóveis
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Pesquisar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('portfolio') }}">Portfólio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">Portfólio de Casas em Ames, Iowa</h1>
+        <div class="row" id="portfolio">
+            <!-- As descrições das casas serão geradas dinamicamente aqui -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Previsão de Preços de Imóveis. Todos os direitos reservados.</p>
+    </footer>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolio = document.getElementById('portfolio');
+            const houses = [
+                {
+                    address: "123 Maple Street",
+                    description: "Esta casa espaçosa com 4 quartos e 3 banheiros é perfeita para famílias grandes. Possui uma grande sala de estar, uma cozinha moderna e um lindo jardim.",
+                    image: "{{ url_for('static', filename='images/casa1.jpg') }}"
+                },
+                {
+                    address: "456 Oak Avenue",
+                    description: "Charmosa casa de 3 quartos e 2 banheiros localizada em um bairro tranquilo. Apresenta um design aconchegante e um quintal perfeito para relaxar.",
+                    image: "{{ url_for('static', filename='images/casa2.jpg') }}"
+                },
+                {
+                    address: "789 Pine Lane",
+                    description: "Moderna casa com 5 quartos e 4 banheiros. Inclui uma cozinha gourmet, uma sala de jogos e uma piscina privativa. Ideal para quem gosta de luxo e conforto.",
+                    image: "{{ url_for('static', filename='images/casa3.jpg') }}"
+                },
+                {
+                    address: "101 Elm Street",
+                    description: "Linda casa de 2 quartos e 1 banheiro, perfeita para casais ou pequenas famílias. Possui um design moderno e um espaço aberto que maximiza a luz natural.",
+                    image: "{{ url_for('static', filename='images/casa4.jpg') }}"
+                },
+                {
+                    address: "202 Cedar Road",
+                    description: "Espaçosa casa de 4 quartos e 2 banheiros com um grande quintal e garagem para 2 carros. Localizada perto de escolas e parques, ideal para famílias com crianças.",
+                    image: "{{ url_for('static', filename='images/casa5.jpg') }}"
+                },
+                {
+                    address: "303 Birch Boulevard",
+                    description: "Elegante casa com 3 quartos e 2 banheiros. Apresenta uma decoração contemporânea, uma cozinha moderna e um pátio perfeito para entretenimento.",
+                    image: "{{ url_for('static', filename='images/casa6.jpg') }}"
+                }
+            ];
+
+            houses.forEach(house => {
+                const houseCard = document.createElement('div');
+                houseCard.className = 'col-md-4 mb-4';
+                houseCard.innerHTML = `
+                    <div class="card">
+                        <img src="${house.image}" class="card-img-top" alt="${house.address}">
+                        <div class="card-body">
+                            <h5 class="card-title">${house.address}</h5>
+                            <p class="card-text">${house.description}</p>
+                        </div>
+                    </div>
+                `;
+                portfolio.appendChild(houseCard);
+            });
+        });
+    </script>
+</body>
+</html>
